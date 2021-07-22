@@ -32,42 +32,59 @@ form {
   }
 }
 
-table {
-  padding: 0;
-  margin-bottom: 10px;
+.rolls {
+  table {
+    padding: 0;
+    margin-bottom: 10px;
 
-  border-spacing: 0;
-  border-collapse: collapse;
-  border: 1px solid black;
-
-  label {
-    display: block;
-  }
-
-  td, th {
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    padding: 5px;
-  }
-
-  tr.header {
+    border-spacing: 0;
+    border-collapse: collapse;
     border: 1px solid black;
-  }
 
-  th.row {
-    text-align: left;
-  }
-
-  .roll-stats {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-
-    .value {
-      font-weight: bold;
+    label {
+      display: block;
     }
-  }
-}
 
-.chart {
-  width: 60%;
+    td, th {
+      border: 1px solid black;
+      //border-right: 1px solid black;
+      padding: 5px;
+    }
+
+    .header {
+      font-weight: bold;
+      border: 1px solid black;
+    }
+
+    th.row {
+      text-align: left;
+    }
+
+    .roll-stats {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+
+      .value {
+        font-weight: bold;
+      }
+    }
+
+  }
+
+  .ranges {
+    label, input {
+      display: inline-block;
+    }
+
+    label {
+      margin-right: 5px;
+    }
+
+    margin-bottom: 5px;
+  }
+
+  .chart {
+    width: 60%;
+    margin-bottom: 5px;
+  }
 }

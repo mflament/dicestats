@@ -18,15 +18,14 @@ export class RollConfigComponent extends Component<RollsConfigProps, { declarati
   }
 
   render(): JSX.Element {
+    const config = this.state.config;
+    const label = `Will roll ${config.rolls.toLocaleString()} times ${config.dices.count}D${this.state.config.dices.faces}`;
     return <form onSubmit={e => this.roll(e)}>
       <label>Rolls
         <input type="string" pattern={ROLLS_CONFIG_PATTERN} value={this.state.declaration}
                onChange={e => this.parseConfig(e.target.value)}/>
       </label>
-      <label>Will
-        roll {this.state.config.rolls.toLocaleString()} times {this.state.config.dices.count}D{this.state.config.dices.faces}
-        <input type="submit" value="Let's roll"/>
-      </label>
+      <label>{label} <input type="submit" value="Let's roll"/></label>
     </form>
   }
 

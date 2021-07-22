@@ -29,6 +29,7 @@
     "@rollup/plugin-node-resolve": "^11.2.1",
     "@rollup/plugin-replace": "^2.4.2",
     "@rollup/plugin-typescript": "^8.2.1",
+    "@types/chart.js": "^2.9.34",
     "@types/jest": "^26.0.23",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
@@ -54,7 +55,7 @@
   },
   "dependencies": {
     "chart.js": "^3.4.1",
-    "react": "file:./react-esm/17.0.2/react",
-    "react-dom": "file:./react-esm/17.0.2/react-dom"
+    "react": "npm:@pika/react@^16.13.1",
+    "react-dom": "npm:@pika/react-dom@^16.13.1"
   }
 }

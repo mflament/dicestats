@@ -1,15 +1,15 @@
 import React, {Component, RefObject} from "react";
-import {Chart as ChartJS, ChartConfiguration, ChartDataset, registerables} from 'chart.js/auto';
+import {Chart, ChartConfiguration, ChartDataset, registerables} from 'chart.js';
 
-ChartJS.register(...registerables);
+Chart.register(...registerables);
 
 interface ChartProps {
   configuration: ChartConfiguration
 }
 
-export class Chart extends Component<ChartProps> {
+class ChartComponent extends Component<ChartProps> {
   private readonly canvasRef: RefObject<HTMLCanvasElement>;
-  private chart?: ChartJS;
+  private chart?: Chart;
 
   constructor(props: ChartProps) {
     super(props);
@@ -24,7 +24,8 @@ export class Chart extends Component<ChartProps> {
     const canvas = this.canvasRef.current;
     if (!canvas)
       throw new Error("Canvas not created");
-    this.chart = new ChartJS(canvas, this.props.configuration);
+    this.props.configuration.plugins = this.props.configuration.plugins || [];
+    this.chart = new Chart(canvas, this.props.configuration);
   }
 
   componentWillUnmount(): void {
@@ -33,4 +34,4 @@ export class Chart extends Component<ChartProps> {
 
 }
 
-export {ChartJS, ChartConfiguration, ChartDataset};
+export {ChartComponent, Chart, ChartConfiguration, ChartDataset};

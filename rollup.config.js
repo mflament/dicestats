@@ -9,8 +9,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 
 import { terser } from 'rollup-plugin-terser';
-import { dataToEsm } from 'rollup-pluginutils';
-import fs from 'fs';
 
 const env = "production";
 

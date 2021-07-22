@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {roll, RollResults, RollsConfig} from "./DiceRolls";
+import {roll, RollsConfig} from "./DiceRolls";
 import {RollResultsComponent} from "./RollResultsComponent";
 import {RollConfigComponent} from "./RollConfigComponent";
+import {RollResults} from "./RollResults";
 
 class DiceRollsStats extends Component<any, { results?: RollResults }> {
   constructor(props: any) {
